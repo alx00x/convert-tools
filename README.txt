@@ -1,9 +1,21 @@
+================================================================================
 
-INFO:
+                                   FFMPEG SCIRPTS
 
- - Kopirajte ceo ovaj folder negde na local drive (recimo desktop).
- - U folder ubacite video koji zelite da konvertujete.
- - Pokrenite odgovatrajucu skriptu i sacekajte da ona odradi svoje.
+================================================================================
+
+INSTALACIJA:
+
+ - Pokrenite installer.
+ - Po instaliranju, skripte cete naci u "C:\convert".
+ - Installer se moze koristiti i kao updater - napravite shortcut do installer-a
+   na desktopu i pokrenite kada zelite da update-ujete skripte.
+
+
+UPOTREBA:
+
+ - U folder "C:\convert" ubacite video koji zelite da konvertujete, 
+   pokrenite odgovatrajucu skriptu i sacekajte da ona odradi svoje.
 
 
 NAPOMENE:
@@ -16,8 +28,11 @@ NAPOMENE:
 
 
 VAZNO:
+
  - Skripta "_theoraandh264.bat" je standardna skripta i uglavnom cete nju koristiti. Svaki sinematik izbacite u raw avi i konvertujte ovom skriptom.
 
+
+================================================================================
 
 SKRIPTE:
 

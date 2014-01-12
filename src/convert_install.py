@@ -1,7 +1,7 @@
 import shutil
 import os
 
-folderSrc = "\\\\192.168.0.200\\c\\tools\\convert\\"
+folderSrc = "\\\\192.168.0.200\\c\\tools\\convertScripts\\convert\\"
 folderDest = "C:\\convert\\"
 if not os.path.isdir(folderDest):
     os.makedirs(folderDest)
