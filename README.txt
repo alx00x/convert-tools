@@ -5,36 +5,26 @@
 ================================================================================
 
 INSTALACIJA:
-
  - Pokrenite installer.
- - Po instaliranju, skripte cete naci u "C:\convert".
- - Installer se moze koristiti i kao updater - napravite shortcut do installer-a
-   na desktopu i pokrenite kada zelite da update-ujete skripte.
-
 
 UPOTREBA:
-
  - U folder "C:\convert" ubacite video koji zelite da konvertujete, 
    pokrenite odgovatrajucu skriptu i sacekajte da ona odradi svoje.
 
-
 NAPOMENE:
-
  - U fajlu "_extensions.txt" dodati ekstenzije koje zelite da skripte konvertuju.
  - ffmpeg.exe i ffmpeg2theora.exe moraju biti u istom folderu gde i bat skripte.
- - Skripte na dropbox-u ce uvek biti "up to date" ali ih morate kopirati negde na lokalu zajedno sa exe fajlovima i tamo ih koristiti.
+ - Skripte na dropbox-u ce uvek biti "up to date" ali ih morate kopirati negde 
+   na lokalu zajedno sa exe fajlovima i tamo ih koristiti.
  - Ove skripte trenutno konvertuju samo AVI, MP4 i OGV fajlove.
- - Svaki razmak u imenu fajla ce biti automatski pretvoren u donju crtu. (Jos jedna opomena da nikad ne koristite razmak.)
-
+ - Svaki razmak u imenu fajla ce biti automatski pretvoren u donju crtu. 
+   (Jos jedna opomena da nikad ne koristite razmak.)
 
 VAZNO:
-
- - Skripta "_theoraandh264.bat" je standardna skripta i uglavnom cete nju koristiti. Svaki sinematik izbacite u raw avi i konvertujte ovom skriptom.
-
+ - Skripta "_theoraandh264.bat" je standardna skripta i uglavnom cete nju 
+   koristiti. Svaki sinematik izbacite u raw avi i konvertujte ovom skriptom.
 
 ================================================================================
-
-SKRIPTE:
 
 _theoraandh264.bat - Pravi OGV (za igru) i MP4 (za preview).
 
@@ -47,3 +37,5 @@ create_[codec].bat - Enkoduje u obelezeni audio/video kodek.
 resize.bat - Menja dimenzije u 1024x512.
 
 vflip.bat - Flipuje vertikalno.
+
+================================================================================
