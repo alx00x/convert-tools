@@ -14,7 +14,7 @@ for /f "delims=" %%a in ('dir /b /a:-d *.ogv') do (
 
     echo !fileName!
 
-    ffmpeg -i %%a -c:v rawvideo -qscale 0 !fileName!_lossless.avi 
+    ffmpeg -i %%a -c:v rawvideo -v:q 0 !fileName!_lossless.avi 
 
 )
 

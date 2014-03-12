@@ -21,13 +21,15 @@ for /f "delims=" %%a in ('dir /b /a:-d *.avi *.mp4 *.ogv') do (
 
     echo !fileName!
 
-    ffmpeg -y -i %%a -c:v libx264 -preset slow -pix_fmt yuv420p -b:v 1200k -minrate 1200k -maxrate 1200k -bufsize 1200k -pass 1 -an -f mp4 NUL && ffmpeg -i %%a -c:v libx264 -preset slow -pix_fmt yuv420p -b:v 1200k -minrate 1200k -maxrate 1200k -bufsize 1200k -pass 2 -c:a aac -strict -2 -b:a 128k !fileName!"_h264".mp4
+    ffmpeg -y -i %%a -c:v libx264 -preset slow -pix_fmt yuv420p -b:v 1200k -minrate 1200k -maxrate 1200k -bufsize 1200k -pass 1 -an -f mp4 NUL && ffmpeg -i %%a -c:v libx264 -preset slow -pix_fmt yuv420p -b:v 1200k -minrate 1200k -maxrate 1200k -bufsize 1200k -pass 2 -c:a aac -strict -2 -b:a 128k !fileName!"_preview".mp4
     
     del ffmpeg2pass-0.log
     del ffmpeg2pass-0.log.mbtree
 
-    ffmpeg2theora -o !fileName!"_theora".ogv --videoquality 8 --noaudio %%a
-
+    ffmpeg -y -i %%a -c:v libx264 -preset slow -pix_fmt yuv420p -profile:v baseline -level 3.0 -an !fileName!.mp4
+    
+    ffmpeg2theora -o !fileName!.ogv --videoquality 8 --noaudio %%a
+    
 )
 
 echo Files converted!
