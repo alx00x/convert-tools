@@ -13,7 +13,7 @@ HOW TO USE:
 
 NOTES:
  - ffmpeg.exe and ffmpeg2theora.exe have to be in same folder as .bat scripts.
- - In "_extensions.txt file you can define file type you wish to convert.
+ - In _extensions.txt file you can define file type you wish to convert.
  - Scripts will automatically rename your file if they find spaces. Please use
    underscores.
 
