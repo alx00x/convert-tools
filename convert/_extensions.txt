@@ -1,3 +1,4 @@
 *.avi
 *.ogv
 *.mp4
+*.mov
