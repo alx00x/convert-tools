@@ -4,38 +4,35 @@
 
 ================================================================================
 
-INSTALACIJA:
- - Pokrenite installer.
+HOW TO INSTALL:
+ - Run convert_install.exe
 
-UPOTREBA:
- - U folder "C:\convert" ubacite video koji zelite da konvertujete, 
-   pokrenite odgovatrajucu skriptu i sacekajte da ona odradi svoje.
+HOW TO USE:
+ - Copy the file you wish to convert into "C:\convert", run the script and 
+   wait for it to finish.
 
-NAPOMENE:
- - U fajlu "_extensions.txt" dodati ekstenzije koje zelite da skripte konvertuju.
- - ffmpeg.exe i ffmpeg2theora.exe moraju biti u istom folderu gde i bat skripte.
- - Skripte na dropbox-u ce uvek biti "up to date" ali ih morate kopirati negde 
-   na lokalu zajedno sa exe fajlovima i tamo ih koristiti.
- - Ove skripte trenutno konvertuju samo AVI, MP4 i OGV fajlove.
- - Svaki razmak u imenu fajla ce biti automatski pretvoren u donju crtu. 
-   (Jos jedna opomena da nikad ne koristite razmak.)
+NOTES:
+ - ffmpeg.exe and ffmpeg2theora.exe have to be in same folder as .bat scripts.
+ - In "_extensions.txt file you can define file type you wish to convert.
+ - Scripts will automatically rename your file if they find spaces. Please use
+   underscores.
 
-VAZNO:
- - Skripta "_theoraandh264.bat" je standardna skripta i uglavnom cete nju 
-   koristiti. Svaki sinematik izbacite u raw avi i konvertujte ovom skriptom.
+IMPORTANT:
+ - Script "_mainscript.bat" is a standard script to be used for each cinematic
+   or ingame video exported as raw video (lossless).
 
 ================================================================================
 
-_theoraandh264.bat - Pravi OGV (za igru) i MP4 (za preview).
+_mainscript.bat - Makes .ogv for game, .mp4 for iOS and preview (with sound).
 
-add_ph.bat - Dodaje "PH" u gornjem levom uglu.
+add_ph.bat - Adds "PH" in upper left corner.
 
-create_[codec].bat - Enkoduje u obelezeni audio/video kodek.
+create_[codec].bat - Encodes in given audio/video codec.
 
 [something]_to_[something].bat - Self-explanatory.
 
-resize.bat - Menja dimenzije u 1024x512.
+resize.bat - Resizes to standard 1024x512 resolution.
 
-vflip.bat - Flipuje vertikalno.
+flip.bat - Flips video vertically or horizontally.
 
 ================================================================================
