@@ -70,8 +70,6 @@ if "%CH%"=="2" goto rawvideo
 if "%CH%"=="3" goto baselineh264
 if "%CH%"=="4" goto quit
 
-if "%CH%"=="w" goto losslessh264
-
 :applepng
 echo apple png
 ffmpeg -start_number %StartNum% -i %Subfolder%\%InputName%%%0%NumPadding%d%FirstFileExt% -c:v png %OutputName%.mov
@@ -87,12 +85,6 @@ goto quit
 :baselineh264
 echo baseline h264
 ffmpeg -start_number %StartNum% -i %Subfolder%\%InputName%%%0%NumPadding%d%FirstFileExt% -c:v libx264 -preset slow -pix_fmt yuv420p -profile:v baseline -level 3.0 %OutputName%.mp4
-pause
-goto quit
-
-:losslessh264
-echo lossless h264
-ffmpeg -start_number %StartNum% -i %Subfolder%\%InputName%%%0%NumPadding%d%FirstFileExt% -c:v libx264 -crf 0 -pix_fmt yuv444p %OutputName%.mp4
 pause
 goto quit
 

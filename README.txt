@@ -23,7 +23,7 @@ IMPORTANT:
 
 ================================================================================
 
-_mainscript.bat - Makes .ogv for game, .mp4 for iOS and preview (with sound).
+_mainscript.bat - Makes .ogv for game, one .mp4 for iOS and one for preview.
 
 add_ph.bat - Adds "PH" in upper left corner.
 
