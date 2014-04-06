@@ -34,6 +34,11 @@ for %%f in (%Subfolder%\*) do (
 )
 echo.
 
+echo Frames per second:
+set /p fps="> "
+
+echo.
+
 set count=1
 
 :loopstart
@@ -72,19 +77,19 @@ if "%CH%"=="4" goto quit
 
 :applepng
 echo apple png
-ffmpeg -start_number %StartNum% -i %Subfolder%\%InputName%%%0%NumPadding%d%FirstFileExt% -c:v png %OutputName%.mov
+ffmpeg -start_number %StartNum% -i %Subfolder%\%InputName%%%0%NumPadding%d%FirstFileExt% -r %fps% -c:v png %OutputName%.mov
 pause
 goto quit
 
 :rawvideo
 echo rawvideo
-ffmpeg -start_number %StartNum% -i %Subfolder%\%InputName%%%0%NumPadding%d%FirstFileExt% -c:v rawvideo -v:q 0 -pix_fmt rgba %OutputName%.mov
+ffmpeg -start_number %StartNum% -i %Subfolder%\%InputName%%%0%NumPadding%d%FirstFileExt% -r %fps% -c:v rawvideo -v:q 0 -pix_fmt rgba %OutputName%.mov
 pause
 goto quit
 
 :baselineh264
 echo baseline h264
-ffmpeg -start_number %StartNum% -i %Subfolder%\%InputName%%%0%NumPadding%d%FirstFileExt% -c:v libx264 -preset slow -pix_fmt yuv420p -profile:v baseline -level 3.0 %OutputName%.mp4
+ffmpeg -start_number %StartNum% -i %Subfolder%\%InputName%%%0%NumPadding%d%FirstFileExt% -r %fps% -c:v libx264 -preset slow -pix_fmt yuv420p -profile:v baseline -level 3.0 %OutputName%.mp4
 pause
 goto quit
 
