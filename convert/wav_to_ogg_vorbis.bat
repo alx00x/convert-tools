@@ -21,7 +21,7 @@ for /f "delims=" %%a in ('dir /b /a:-d *.wav') do (
 
     echo !fileName!
 
-    ffmpeg -i %%a -vn -c:a libvorbis -q:a 10 !fileName!_vorbis.ogg
+    ffmpeg -i %%a -vn -c:a libvorbis -q:a 10 !fileName!.ogg
     
 )
 

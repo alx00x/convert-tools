@@ -14,7 +14,7 @@ for /f "delims=" %%a in ('dir /b /a:-d *.ogg') do (
 
     echo !fileName!
 
-    ffmpeg -i %%a !fileName!_audio.wav 
+    ffmpeg -i %%a !fileName!.wav 
 
 )
 
