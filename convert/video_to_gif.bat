@@ -27,11 +27,12 @@ for /f "delims=" %%a in ('dir /b /a:-d !extensions!') do (
 
     echo !fileName!
 
-    ffmpeg -y -i %%a -c:v libx264 -preset slow -pix_fmt yuv420p -b:v 5000k -minrate 5000k -maxrate 5000k -bufsize 1835k -pass 1 -an -f mp4 NUL && ffmpeg -i %%a -c:v libx264 -preset slow -pix_fmt yuv420p -b:v 5000k -minrate 5000k -maxrate 5000k -bufsize 1835k -pass 2 -c:a aac -strict -2 -b:a 384k !fileName!"_h264".mp4
+    ffmpeg -i %%a -vf fps=15,scale=320:-1:flags=lanczos,palettegen palette.png
 
-    del ffmpeg2pass-0.log
-    del ffmpeg2pass-0.log.mbtree
-    
+    ffmpeg -i %%a -i palette.png -filter_complex "fps=15,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" !fileName!.gif
+
+    del palette.png
+
 )
 
 echo Files converted!

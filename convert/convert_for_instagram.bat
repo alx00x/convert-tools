@@ -63,7 +63,7 @@ echo Converting and resizing, please wait...
 set outputName=%chosenvideofile:~0,-4%
 set width=640
 set height=640
-ffmpeg -y -i %chosenvideofile% -c:v libx264 -preset slow -pix_fmt yuv420p -b:v 1200k -minrate 1200k -maxrate 1200k -bufsize 1200k -pass 1 -an -f mp4 NUL && ffmpeg -i %chosenvideofile% -i %chosenaudiofile% -c:v libx264 -vf "scale=(iw*sar)*min(640/(iw*sar)\,640/ih):ih*min(640/(iw*sar)\,640/ih), pad=640:640:(640-iw*min(640/iw\,640/ih))/2:(640-ih*min(640/iw\,640/ih))/2" -preset slow -pix_fmt yuv420p -b:v 1200k -minrate 1200k -maxrate 1200k -bufsize 1200k -pass 2 -c:a aac -strict -2 -b:a 128k !outputName!.mp4
+ffmpeg -y -i %chosenvideofile% -c:v libx264 -preset slow -pix_fmt yuv420p -b:v 1200k -minrate 1200k -maxrate 1200k -bufsize 1200k -pass 1 -an -f mp4 NUL && ffmpeg -i %chosenvideofile% -i %chosenaudiofile% -c:v libx264 -vf "scale=(iw*sar)*min(640/(iw*sar)\,640/ih):ih*min(640/(iw*sar)\,640/ih), pad=640:640:(640-iw*min(640/iw\,640/ih))/2:(640-ih*min(640/iw\,640/ih))/2" -preset slow -pix_fmt yuv420p -b:v 1200k -minrate 1200k -maxrate 1200k -bufsize 1200k -pass 2 -c:a aac -strict -2 -b:a 128k !outputName!_inst.mp4
     
 del ffmpeg2pass-0.log
 del ffmpeg2pass-0.log.mbtree
