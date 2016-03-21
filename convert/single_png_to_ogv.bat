@@ -16,7 +16,7 @@ for /f "delims=" %%a in ('dir /b /a:-d *.png') do (
 
     ffmpeg -loop 1 -i %%a -c:v libx264 -t 10 -pix_fmt yuv420p -vf scale=1024:512 !fileName!.mp4
 
-    ffmpeg2theora -o !fileName!.ogv --videoquality 8 --noaudio !fileName!.mp4
+    ffmpeg -y -i !fileName!.mp4 -c:v libtheora -qscale:v 8 -an !fileName!.ogv
 
     del !fileName!.mp4
 

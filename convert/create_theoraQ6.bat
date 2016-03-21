@@ -17,7 +17,7 @@ for /f "delims=" %%a in ('dir /b /a:-d !extensions!') do (
 for /f "delims=" %%a in ('dir /b /a:-d !extensions!') do (
 
     set fileName=%%~na
-    echo !fileName!|findstr /r /c:"_raw" >nul 
+    echo !fileName!|findstr /r /c:"_raw" >nul
 
     if not errorlevel 1 (
         set fileName=!fileName:_raw=!
@@ -27,7 +27,7 @@ for /f "delims=" %%a in ('dir /b /a:-d !extensions!') do (
 
     echo !fileName!
 
-    ffmpeg2theora -o !fileName!"_theora".ogv --videoquality 6 --noaudio %%a
+    ffmpeg -y -i %%a -c:v libtheora -qscale:v 8 -an !fileName!"_theora".ogv
 
 )
 
